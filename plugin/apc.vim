@@ -113,8 +113,8 @@ function! s:apc_enable()
 		inoremap <silent><buffer><expr> <tab>
 					\ pumvisible()? "\<c-n>" :
 					\ <SID>check_back_space() ? "\<tab>" : "\<c-n>"
-		inoremap <silent><buffer><expr> <s-tab>
-					\ pumvisible()? "\<c-p>" : "\<s-tab>"
+		" inoremap <silent><buffer><expr> <s-tab>
+		" 			\ pumvisible()? "\<c-p>" : "\<s-tab>"
 		let b:apc_init_tab = 1
 	endif
 	if get(g:, 'apc_cr_confirm', 0) == 0
@@ -141,7 +141,7 @@ function! s:apc_disable()
 	endif
 	if get(b:, 'apc_init_tab', 0)
 		silent! iunmap <buffer><expr> <tab>
-		silent! iunmap <buffer><expr> <s-tab>
+		" silent! iunmap <buffer><expr> <s-tab>
 	endif
 	if get(b:, 'apc_init_bs', 0)
 		silent! iunmap <buffer><expr> <bs>
